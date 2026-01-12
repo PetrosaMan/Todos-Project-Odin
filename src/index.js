@@ -3,6 +3,7 @@
 import { Projects } from "./projects.js";
 import { Project } from "./project.js";
 import { Todo } from "./todo.js";
+import "./style.css";
 
 /************* Test classes **************/
 /*

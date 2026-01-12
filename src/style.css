@@ -2,3 +2,10 @@
 body {
   background-color: rebeccapurple;
 }
+.todoHeader {
+  color: red;
+}
+
+#content {
+  color: blue;
+}
