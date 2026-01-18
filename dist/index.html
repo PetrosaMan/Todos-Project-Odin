@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +6,26 @@
     <title>Todo List Odin Project</title>
   <script defer src="main.js"></script></head>
   <body>
-    <header class="todoHeader">My Todo List</header>
+    <header class="todo-header">
+      <div class="todo-list">Todo List</div>
+      <div class="date" id="date">Date:</div>
+    </header>
+    <div class="my-projects">My Projects</div>
+    <div class="todo-items">Todo Items</div>
 
-    <div id="content">QQQ</div>
+    <!---  buttons for My Projects-->
+    <div class="projects-buttons">
+      <button class="add-project">add project</button>
+      <button class="delete-project">delete project</button>
+    </div>
+
+    <!-- buttons for Todo Items -->
+    <div class="todo-buttons">
+      <button class="add-todo">add todo</button>
+      <button class="edit-todo">edit todo</button>
+      <button class="delete-todo">delete todo</button>
+    </div>
+
+    <div id="content">***</div>
   </body>
 </html>

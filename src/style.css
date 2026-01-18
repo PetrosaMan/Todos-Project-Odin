@@ -1,11 +1,57 @@
 /* style.css */
-body {
-  background-color: rebeccapurple;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.todoHeader {
-  color: red;
+
+body {
+  background-color: whitesmoke;
+}
+.todo-header {
+  display: flex;
+  gap: 10px;
+  color: black;
 }
 
 #content {
-  color: yellow;
+  color: red;
+}
+
+.add-project,
+.delete-project {
+  width: 100px;
+  height: 25px;
+}
+
+.add-todo,
+.edit-todo,
+.delete-todo {
+  width: 100px;
+  height: 25px;
+}
+
+.section {
+  display: flex;
+  /*height: 50px;*/
+  /*width: 200px;*/
+  border: 1px solid brown;
+  gap: 50px;
+}
+
+.projects {
+  /*height: 50px;*/
+  /*width: 100px;*/
+  border: 1px solid blue;
+}
+
+.todo-items {
+  /*height: 50px;*/
+  /*width: 100px;*/
+  border: 1px solid green;
+}
+
+.buttons {
+  display: flex;
+  gap: 50px;
 }

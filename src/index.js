@@ -5,6 +5,21 @@ import { Project } from "./project.js";
 import { Todo } from "./todo.js";
 import "./style.css";
 
+function updateDate() {
+  const now = new Date();
+  // 'en-GB' naturally uses the dd/mm/yyyy format
+  const formattedDate = now.toLocaleDateString("en-GB");
+
+  document.getElementById("date").textContent = formattedDate;
+  console.log(formattedDate);
+}
+
+// Initial call to display the date immediately
+updateDate();
+
+// Update every hour (3,600,000 milliseconds)
+setInterval(updateDate, 3600000);
+
 /************* Test classes **************/
 /*
 let projects = new Projects();
