@@ -5,6 +5,9 @@ import { Project } from "./project.js";
 import { Todo } from "./todo.js";
 import "./style.css";
 
+import { renderProject } from "./projects-module.js";
+import { renderTodo } from "./todos-module.js";
+
 function updateDate() {
   const now = new Date();
   // 'en-GB' naturally uses the dd/mm/yyyy format
@@ -19,6 +22,16 @@ updateDate();
 
 // Update every hour (3,600,000 milliseconds)
 setInterval(updateDate, 3600000);
+
+let btn1 = "btn_add_project";
+btn1 = document.querySelector(".add-project");
+
+btn1.addEventListener("click", () => {
+  console.log("add project button clicked");
+});
+
+//renderProject();
+//renderTodo();
 
 /************* Test classes **************/
 /*
