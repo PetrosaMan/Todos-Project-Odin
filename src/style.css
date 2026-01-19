@@ -6,12 +6,47 @@
 }
 
 body {
+  margin: 10px;
+}
+
+.sections-container {
+  border: 5px soild Brown;
+  color: fuchsia;
+  display: flex;
+}
+
+.projects {
+  border: 2px solid greenyellow;
+  width: 50%;
+}
+
+.todos {
+  border: 1px solid blue;
+  width: 50%;
+}
+
+body {
   background-color: whitesmoke;
 }
 .todo-header {
+  border: 1px solid red;
   display: flex;
-  gap: 10px;
-  color: black;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.todo-list {
+  /*border: 1px solid red;*/
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.date {
+  /*border: 1px solid red;*/
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 #content {
@@ -30,28 +65,55 @@ body {
   width: 100px;
   height: 25px;
 }
-
 .section {
-  display: flex;
-  /*height: 50px;*/
-  /*width: 200px;*/
   border: 1px solid brown;
-  gap: 50px;
 }
-
-.projects {
-  /*height: 50px;*/
-  /*width: 100px;*/
-  border: 1px solid blue;
-}
-
 .todo-items {
-  /*height: 50px;*/
-  /*width: 100px;*/
   border: 1px solid green;
+  text-align: center;
 }
 
 .buttons {
+  border: 0;
+}
+
+.todo-btns,
+.projects-btns {
   display: flex;
+  justify-content: space-evenly;
+}
+
+.container {
+  border: 1px solid purple;
+  display: flex;
+}
+
+.projects-title {
+  border: 1px solid black;
+  text-align: center;
+}
+
+#projects {
+  display: flex;
+  justify-content: space-between;
+  color: blue;
+  border: 1px solid green;
+  width: 50%;
+}
+
+#todos {
+  display: flex;
+  justify-content: space-between;
   gap: 50px;
+  color: coral;
+  border: 1px solid rebeccapurple;
+  width: 50%;
+}
+
+.todo-description {
+  color: magenta;
+}
+
+.footer {
+  text-align: center;
 }

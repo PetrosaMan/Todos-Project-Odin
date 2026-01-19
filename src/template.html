@@ -10,22 +10,39 @@
       <div class="todo-list">Todo List</div>
       <div class="date" id="date">Date:</div>
     </header>
-    <section class="section">
-      <div class="projects">Projects</div>
-      <div class="todo-items">Todo Items</div>
-    </section>
 
-    <!---  buttons for Projects-->
-    <div class="buttons">
-      <button class="add-project">add project</button>
-      <button class="delete-project">delete project</button>
-      <!-- buttons for Todo Items -->
-      <button class="add-todo">add todo</button>
-      <button class="edit-todo">edit todo</button>
-      <button class="delete-todo">delete todo</button>
+    <div class="sections-container">
+      <section class="projects">
+        <h2 class="projects-title">Projects</h2>
+        <div class="projects-btns">
+          <button class="add-project">add project</button>
+          <button class="delete-project">delete project</button>
+        </div>
+      </section>
+
+      <section class="todos">
+        <h2 class="todo-items">Todo Items</h2>
+        <div class="todo-btns">
+          <button class="add-todo">add todo</button>
+          <button class="edit-todo">edit todo</button>
+          <button class="delete-todo">delete todo</button>
+        </div>
+      </section>
     </div>
 
-    <div id="content">*** content goes here ***</div>
+    <main class="container">
+      <!-- projects list-->
+      <div id="projects">
+        <p class="project-name">project name</p>
+        <p class="project-id">project id</p>
+      </div>
+
+      <!-- todos list-->
+      <div id="todos">
+        <p class="todo-description">todo description</p>
+        <p class="todo-id">todo id</p>
+      </div>
+    </main>
 
     <footer class="footer">by PetrosaMan , Jan 2026</footer>
   </body>
