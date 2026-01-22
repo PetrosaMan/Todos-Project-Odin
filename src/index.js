@@ -31,6 +31,9 @@ updateDate();
 
 // Update every hour (3,600,000 milliseconds)
 setInterval(updateDate, 3600000);
+// end of date display
+
+export const projects = new Projects();
 
 //renderProject();
 //renderTodo();
