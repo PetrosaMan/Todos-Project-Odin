@@ -117,3 +117,42 @@ body {
 .footer {
   text-align: center;
 }
+
+.project-dialog {
+  dialog[open] {
+    display: flex;
+  }
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 10px;
+  /*height: 100px;*/
+  padding: 10px;
+}
+
+dialog label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+dialog input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 5px;
+  width: 300px;
+}
+
+dialog button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}

@@ -15,7 +15,8 @@
       <section class="projects">
         <h2 class="projects-title">Projects</h2>
         <div class="projects-btns">
-          <button class="add-project">add project</button>
+          <!--<button class="add-project">add project</button>-->
+          <button id="add-project" class="add-project">add project</button>
           <button class="delete-project">delete project</button>
         </div>
       </section>
@@ -43,6 +44,24 @@
         <p class="todo-id">todo id</p>
       </div>
     </main>
+
+    <!--add project dialog -->
+    <dialog class="project-dialog">
+      <form method="dialog">
+        <label for="project-name">Project: </label>
+        <input
+          type="text"
+          id="project-name"
+          name="project-name"
+          placeholder="project name"
+          required
+        />
+        <button type="submit" class="submit">submit</button>
+      </form>
+    </dialog>
+
+    <!-- Area to display the result-->
+    <p>Entered project name: <strong id="outputName">None</strong></p>
 
     <footer class="footer">by PetrosaMan , Jan 2026</footer>
   </body>

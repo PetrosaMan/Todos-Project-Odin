@@ -4,6 +4,15 @@ import { Projects } from "./projects.js";
 import { Project } from "./project.js";
 import { Todo } from "./todo.js";
 import "./style.css";
+import {
+  addProject,
+  dialog,
+  nameInput,
+  outputName,
+  showBtn,
+  submitBtn,
+  btn1,
+} from "./projectModal.js";
 
 import { renderProject } from "./projects-module.js";
 import { renderTodo } from "./todos-module.js";
@@ -22,13 +31,6 @@ updateDate();
 
 // Update every hour (3,600,000 milliseconds)
 setInterval(updateDate, 3600000);
-
-let btn1 = "btn_add_project";
-btn1 = document.querySelector(".add-project");
-
-btn1.addEventListener("click", () => {
-  console.log("add project button clicked");
-});
 
 //renderProject();
 //renderTodo();
