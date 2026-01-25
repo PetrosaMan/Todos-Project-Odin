@@ -18,7 +18,7 @@ export class Projects {
   deleteProject(projId) {
     // code to remove project
     console.log("projId:", projId);
-    this.projects = this.projects.filter((p) => p.id !== projId);
+    this.projects = this.projects.filter((p) => p.id !== parseInt(projId));
   }
 
   getProject(projId) {

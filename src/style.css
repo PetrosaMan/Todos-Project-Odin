@@ -9,8 +9,29 @@ body {
   margin: 10px;
 }
 
+.sidebar {
+  border: 1px solid greenyellow;
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  font-size: large;
+  width: 50%;
+}
+
+.add-project {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#add-project {
+  width: 150px;
+  height: 35px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .sections-container {
-  border: 5px soild Brown;
+  border: 5px solid Brown;
   color: fuchsia;
   display: flex;
 }
@@ -53,7 +74,6 @@ body {
   color: red;
 }
 
-.add-project,
 .delete-project {
   width: 100px;
   height: 25px;

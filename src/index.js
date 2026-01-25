@@ -35,15 +35,8 @@ setInterval(updateDate, 3600000);
 
 export const projects = new Projects();
 
-//renderProjects();
-//renderTodo();
-
 /************* Test classes **************/
 /*
-let projects = new Projects();
-let project = new Project("The Odin Project");
-console.log(project.name, " id: ", project.id);
-
 let todo = new Todo(
   "Planning",
   "Create a project plan",
@@ -52,23 +45,4 @@ let todo = new Todo(
   false
 );
 
-project.addTodo(todo);
-projects.addProject(project);
-
-project = new Project("Central Heating");
-projects.addProject(project);
-
-console.log("console.log projects: ", projects);
-
-project = projects.getProjectByName("The Odin Project");
-console.log("project: ", project);
-
-const projectId = projects.getProjectId("The Odin Project");
-console.log(projectId);
-
-const todosByProjId = projects.getTodoslistByPojectId(projectId);
-console.table(todosByProjId);
-
-let myProjects = projects.viewAllProjects();
-console.table(myProjects);
 */
