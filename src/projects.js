@@ -17,6 +17,7 @@ export class Projects {
 
   deleteProject(projId) {
     // code to remove project
+    console.log("projId:", projId);
     this.projects = this.projects.filter((p) => p.id !== projId);
   }
 
@@ -30,7 +31,7 @@ export class Projects {
 
   getProjectId(name) {
     const projectIndex = this.projects.findIndex(
-      (project) => project.name === name
+      (project) => project.name === name,
     );
     //console.log("index: ", projectIndex);
     return this.projects[projectIndex].id;
@@ -39,7 +40,7 @@ export class Projects {
   getTodoslistByPojectId(projId) {
     console.log("Todos by project called");
     const projectIndex = this.projects.findIndex(
-      (project) => project.id === projId
+      (project) => project.id === projId,
     );
     return this.projects[projectIndex].todos;
   }

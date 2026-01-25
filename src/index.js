@@ -14,8 +14,8 @@ import {
   btn1,
 } from "./projectModal.js";
 
-import { renderProject } from "./projects-module.js";
 import { renderTodo } from "./todos-module.js";
+import { renderProjects } from "./renderProjects.js";
 
 function updateDate() {
   const now = new Date();
@@ -35,7 +35,7 @@ setInterval(updateDate, 3600000);
 
 export const projects = new Projects();
 
-//renderProject();
+//renderProjects();
 //renderTodo();
 
 /************* Test classes **************/

@@ -1,7 +1,8 @@
 // Modal add project
 import { Project } from "./project.js";
-import { Projects } from "./projects.js";
+//import { Projects } from "./projects.js";
 import { projects } from "./index.js";
+import { renderProjects } from "./renderProjects.js";
 
 // Get references to the dialog and buttons
 const dialog = document.querySelector("dialog");
@@ -35,14 +36,12 @@ submitBtn.addEventListener("click", () => {
   let projectName = nameInput.value;
   if (projectName.trim() === "") {
     projectName = "Untitled Project";
+    console.log("Untitled project");
   }
   let project = new Project(projectName);
-  //let projects = new Projects();
   projects.addProject(project);
-  console.log("New project created: ", project);
-  console.log("All projects: ", projects.viewAllProjects());
-  // Display the value (or process it further)
-  outputName.textContent = projectName;
+  console.log("projects:", projects.viewAllProjects());
+  renderProjects();
 });
 
 // Export everything needed
