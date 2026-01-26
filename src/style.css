@@ -7,175 +7,70 @@
 
 body {
   margin: 10px;
+  border: 2px solid black;
+}
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
-.sidebar {
-  border: 1px solid greenyellow;
-  display: grid;
-  grid-template-columns: 5fr 2fr;
-  font-size: large;
-  width: 50%;
+.todo-list {
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+}
+
+.date {
+  font-size: 20px;
+  font-weight: bold;
+  color: blue;
+}
+
+.projects-todos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border: 2px solid green;
+  padding: 10px;
+}
+
+.project-dialog {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  height: 100px;
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .add-project {
   display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
 
-#add-project {
-  width: 150px;
-  height: 35px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.sections-container {
-  border: 5px solid Brown;
-  color: fuchsia;
-  display: flex;
-}
-
-.projects {
-  border: 2px solid greenyellow;
-  width: 50%;
-}
-
-.todos {
-  border: 1px solid blue;
-  width: 50%;
-}
-
-body {
-  background-color: whitesmoke;
-}
-.todo-header {
-  border: 1px solid red;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.todo-list {
-  /*border: 1px solid red;*/
-  font-family: "Courier New", Courier, monospace;
-  font-size: 30px;
-  font-weight: 600;
-}
-
-.date {
-  /*border: 1px solid red;*/
-  font-family: "Courier New", Courier, monospace;
-  font-size: 25px;
-  font-weight: 600;
-}
-
-#content {
-  color: red;
-}
-
-.delete-project {
-  width: 100px;
-  height: 25px;
-}
-
-.add-todo,
-.edit-todo,
-.delete-todo {
-  width: 100px;
-  height: 25px;
-}
-.section {
-  border: 1px solid brown;
-}
-.todo-items {
-  border: 1px solid green;
-  text-align: center;
-}
-
-.buttons {
-  border: 0;
-}
-
-.todo-btns,
-.projects-btns {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.container {
-  border: 1px solid purple;
-  display: flex;
-}
-
-.projects-title {
-  border: 1px solid black;
-  text-align: center;
-}
-
-#projects {
-  display: grid;
-  grid-template-columns: 2fr auto;
-  row-gap: 5px;
-  column-gap: 10px;
-  color: teal;
-  border: 1px solid orange;
-  padding: 10px;
-  width: 50%;
-}
-
-#todos {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-  color: coral;
-  border: 1px solid rebeccapurple;
-  width: 50%;
-}
-
-.todo-description {
-  color: magenta;
-}
-
-.footer {
-  text-align: center;
-}
-
-.project-dialog {
-  dialog[open] {
-    display: flex;
-  }
-  text-align: center;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  gap: 10px;
-  /*height: 100px;*/
-  padding: 10px;
-}
-
-dialog label {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  margin-right: 10px;
-  padding: 10px;
-}
-
-dialog input {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  padding: 5px;
-  width: 300px;
-}
-
-dialog button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 5px 10px;
-  margin-left: 10px;
+#add-project,
+#add-todo {
+  padding: 8px 20px;
+  font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
+}
+
+#project-name {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  width: 200px;
 }
