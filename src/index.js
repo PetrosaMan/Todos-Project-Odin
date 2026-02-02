@@ -1,48 +1,30 @@
 // index.js
-
 import { Projects } from "./projects.js";
 import { Project } from "./project.js";
 import { Todo } from "./todo.js";
 import "./style.css";
-import {
-  addProject,
-  dialog,
-  nameInput,
-  outputName,
-  showBtn,
-  submitBtn,
-  btn1,
-} from "./projectModal.js";
-
-import { renderTodo } from "./todos-module.js";
-import { renderProjects } from "./renderProjects.js";
-
-function updateDate() {
-  const now = new Date();
-  // 'en-GB' naturally uses the dd/mm/yyyy format
-  const formattedDate = now.toLocaleDateString("en-GB");
-
-  document.getElementById("date").textContent = formattedDate;
-  console.log(formattedDate);
-}
-
-// Initial call to display the date immediately
-updateDate();
-
-// Update every hour (3,600,000 milliseconds)
-setInterval(updateDate, 3600000);
-// end of date display
 
 export const projects = new Projects();
 
-/************* Test classes **************/
-/*
-let todo = new Todo(
-  "Planning",
-  "Create a project plan",
-  "20-07-2026",
-  "low",
-  false
-);
+import { renderProjects, renderTodos } from "./render.js"; // import render functions
+import "./todoModal.js";
+import "./projectModal.js";
 
-*/
+export let activeProjectId = null;
+
+export function setActiveProjectId(id) {
+  activeProjectId = id;
+}
+
+// Date display
+function updateDate() {
+  const now = new Date();
+  const formattedDate = now.toLocaleDateString("en-GB");
+  document.getElementById("date").textContent = formattedDate;
+}
+updateDate();
+setInterval(updateDate, 3600000);
+
+// Initial render
+renderProjects();
+document.getElementById("todos").innerHTML = "<p>No todos</p>";

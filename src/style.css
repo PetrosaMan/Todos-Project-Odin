@@ -9,6 +9,14 @@ body {
   margin: 10px;
   border: 2px solid black;
 }
+
+button {
+  margin: 5px;
+  padding: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 .todo-header {
   display: flex;
   justify-content: space-between;
@@ -30,6 +38,23 @@ body {
   color: blue;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-container {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  border: 2px solid orange;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 20px;
+}
+
 .projects-todos {
   display: flex;
   justify-content: space-between;
@@ -40,32 +65,50 @@ body {
 }
 
 .project-dialog {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   height: 100px;
-  width: 300px;
+  width: 450px;
   border: 2px solid black;
   border-radius: 10px;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
-.add-project {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.todo-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  height: auto; /*100px;*/
+  width: 450px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
-#add-project,
+label {
+  font-size: 18px;
+  margin-right: 5px;
+}
+#add-project {
+  padding: 8px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
 #add-todo {
   padding: 8px 20px;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 #project-name {
@@ -73,4 +116,117 @@ body {
   padding: 8px;
   font-size: 16px;
   width: 200px;
+}
+
+.container {
+  border: 5px solid blue;
+  padding: 10px;
+  display: flex;
+}
+#projects {
+  border: 5px solid purple;
+  padding: 10px;
+}
+
+#todos {
+  border: 5px solid brown;
+  padding: 10px;
+}
+
+#todo-title {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#todo-description {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#todo-due-date {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#todo-priority {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#todo-project-id {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Project list items */
+.project-item {
+  padding: 8px 12px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hover effect for better UX */
+.project-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Active project highlight */
+.active-project {
+  background-color: #d0ebff; /* light blue highlight */
+  border-color: #339af0; /* stronger border */
+  font-weight: bold;
+}
+
+/* Delete button inside project items */
+.project-item button {
+  margin-left: 10px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.project-item button:hover {
+  background-color: #fa5252;
+}
+
+/* Todo items */
+.todo-item {
+  padding: 6px 10px;
+  margin: 4px 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Completed todos styling */
+.todo-item.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* delete todo button styling*/
+.delete-todo {
+  border-radius: 8px;
+  background-color: #fa5252;
+  color: white;
 }

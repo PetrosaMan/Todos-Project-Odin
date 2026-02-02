@@ -7,27 +7,22 @@ export class Project {
     this.todos = [];
   }
 
-  editTodo(todoId, { title, description, dueDate, priority, completed }) {
-    const todo = this.todos.find((t) => t.id === todoId);
-    if (todo) {
-      todo.edit(title, description, dueDate, priority, completed);
-    }
-  }
-
   addTodo(todo) {
     this.todos.push(todo);
   }
 
+  editTodo(todoId, { title, description, dueDate, priority, completed }) {
+    const todo = this.todos.find((t) => t.id === todoId);
+    if (todo && typeof todo.edit === "function") {
+      todo.edit(title, description, dueDate, priority, completed);
+    }
+  }
+
   deleteTodo(todoId) {
-    // add code here
     this.todos = this.todos.filter((todo) => todo.id !== todoId);
   }
 
   getTodos() {
     return this.todos;
   }
-
-  getProjectId() {
-    return this.id;
-  }
-} // end of Project class
+}
