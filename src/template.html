@@ -66,14 +66,13 @@
         <input type="date" id="todo-due-date" name="todo-due-date" required />
         <label for="todo-priority">Priority: </label>
         <input type="text" id="todo-priority" name="todo-priority" required />
-        <label for="todo-completed">Completed: </label>
         <input
-          type="text"
+          type="checkbox"
           id="todo-completed"
           name="todo-completed"
-          placeholder="no"
-          required
+          value="false"
         />
+        <label for="todo-completed">completed</label><br />
         <button type="submit" id="todo-dialog-button">submit</button>
       </form>
     </dialog>

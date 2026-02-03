@@ -64,18 +64,69 @@ export function renderTodos(projectId) {
   todos.forEach((todo) => {
     const div = document.createElement("div");
     div.classList.add("todo-item");
-    div.textContent = `${todo.title} — Due: ${todo.dueDate} — Priority: ${todo.priority}`;
 
-    // Optional: add delete button
-    const delBtn = document.createElement("button");
-    delBtn.textContent = "Delete";
-    delBtn.classList.add("delete-todo");
-    delBtn.addEventListener("click", () => {
-      const project = projects.getProject(projectId);
-      project.deleteTodo(todo.id);
+    // Checkbox
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = todo.completed === true || todo.completed === "yes";
+    checkbox.addEventListener("change", () => {
+      todo.completed = checkbox.checked;
+      projects.saveToLocalStorage();
       renderTodos(projectId);
     });
 
+    // Text
+    const textSpan = document.createElement("span");
+    textSpan.textContent = `${todo.title} — Due: ${todo.dueDate} — Priority: ${todo.priority}`;
+    if (todo.completed) textSpan.classList.add("completed");
+
+    // 🔹 Edit button (inserted here)
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.addEventListener("click", () => {
+      const dialog = document.querySelector(".todo-dialog");
+      dialog.showModal();
+
+      // Pre-fill modal
+      document.getElementById("todo-title").value = todo.title;
+      document.getElementById("todo-description").value = todo.description;
+      document.getElementById("todo-due-date").value = todo.dueDate;
+      document.getElementById("todo-priority").value = todo.priority;
+      document.getElementById("todo-completed").checked = todo.completed;
+
+      // Override form submit for editing
+      const form = dialog.querySelector("form");
+      const handler = (e) => {
+        e.preventDefault();
+        todo.edit(
+          document.getElementById("todo-title").value,
+          document.getElementById("todo-description").value,
+          document.getElementById("todo-due-date").value,
+          document.getElementById("todo-priority").value,
+          document.getElementById("todo-completed").checked,
+        );
+        projects.saveToLocalStorage();
+        renderTodos(projectId);
+        form.removeEventListener("submit", handler);
+        dialog.close();
+      };
+      form.addEventListener("submit", handler);
+    });
+
+    // Delete button
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Delete";
+    delBtn.addEventListener("click", () => {
+      const project = projects.getProject(projectId);
+      project.deleteTodo(todo.id);
+      projects.saveToLocalStorage();
+      renderTodos(projectId);
+    });
+
+    // Append everything
+    div.appendChild(checkbox);
+    div.appendChild(textSpan);
+    div.appendChild(editBtn); // 🔹 right before delete
     div.appendChild(delBtn);
     todosContainer.appendChild(div);
   });

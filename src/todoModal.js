@@ -24,7 +24,7 @@ document.querySelector(".todo-dialog form").addEventListener("submit", (e) => {
     document.getElementById("todo-description").value,
     document.getElementById("todo-due-date").value,
     document.getElementById("todo-priority").value,
-    document.getElementById("todo-completed").value,
+    document.getElementById("todo-completed").checked,
   );
 
   project.addTodo(newTodo);
