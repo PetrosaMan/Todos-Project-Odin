@@ -77,7 +77,11 @@ export function renderTodos(projectId) {
 
     // Text
     const textSpan = document.createElement("span");
-    textSpan.textContent = `${todo.title} — Due: ${todo.dueDate} — Priority: ${todo.priority}`;
+    textSpan.innerHTML = `${todo.title}<br>
+    Descr: ${todo.description}<br>
+    Due: ${todo.dueDate}<br>
+    Priority: ${todo.priority}<br>
+    Completed: ${todo.Completed}`;
     if (todo.completed) textSpan.classList.add("completed");
 
     // 🔹 Edit button (inserted here)

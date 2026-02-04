@@ -7,7 +7,7 @@
 
 body {
   margin: 10px;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
 }
 
 button {
@@ -24,6 +24,7 @@ button {
   margin-bottom: 20px;
   margin-left: 10px;
   margin-right: 20px;
+  padding: 10px;
 }
 
 .todo-list {
@@ -119,18 +120,21 @@ label {
 }
 
 .container {
-  border: 5px solid blue;
+  /*border: 5px solid blue;*/
   padding: 10px;
   display: flex;
 }
 #projects {
-  border: 5px solid purple;
+  /*border: 5px solid purple;*/
   padding: 10px;
+  width: 40%;
+  min-height: 40px;
 }
 
 #todos {
-  border: 5px solid brown;
+  /*border: 5px solid brown;*/
   padding: 10px;
+  width: 60%;
 }
 
 #todo-title {
@@ -172,12 +176,15 @@ label {
 .project-item {
   padding: 8px 12px;
   margin: 4px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 3px solid #800080;
+  border-radius: 5px;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  min-width: 40%;
 }
 
 /* Hover effect for better UX */
@@ -196,7 +203,7 @@ label {
 .project-item button {
   margin-left: 10px;
   padding: 4px 8px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background-color: #ff6b6b;
   color: white;
   border: none;
@@ -212,7 +219,9 @@ label {
 .todo-item {
   padding: 6px 10px;
   margin: 4px 0;
-  border-bottom: 1px solid #ddd;
+  border: 3px solid purple;
+  border-radius: 8px;
+  font-size: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -222,6 +231,7 @@ label {
 .todo-item.completed {
   text-decoration: line-through;
   color: #888;
+  border: 2px solid #800080;
 }
 
 /* delete todo button styling*/
@@ -229,4 +239,9 @@ label {
   border-radius: 8px;
   background-color: #fa5252;
   color: white;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 100vh;
 }
