@@ -3,11 +3,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #00a2ff;
 }
 
 body {
   margin: 10px;
-  /*border: 2px solid black;*/
+  border: 2px solid black;
+  background: whitesmoke;
+  border-radius: 10px;
 }
 
 button {
@@ -15,6 +18,12 @@ button {
   padding: 8px;
   font-size: 16px;
   cursor: pointer;
+}
+
+#todos button {
+  background-color: lightcoral;
+  border-radius: 8px;
+  color: white;
 }
 
 .todo-header {
@@ -30,13 +39,11 @@ button {
 .todo-list {
   font-size: 30px;
   font-weight: bold;
-  color: red;
 }
 
 .date {
   font-size: 20px;
   font-weight: bold;
-  color: blue;
 }
 
 .container {
@@ -58,10 +65,9 @@ button {
 
 .projects-todos {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 20px;
-  border: 2px solid green;
   padding: 10px;
 }
 
@@ -104,12 +110,14 @@ label {
   font-size: 16px;
   cursor: pointer;
   border-radius: 10px;
+  background-color: whitesmoke;
 }
 #add-todo {
   padding: 8px 20px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 10px;
+  background-color: whitesmoke;
 }
 
 #project-name {
@@ -228,7 +236,7 @@ label {
 }
 
 /* Completed todos styling */
-.todo-item.completed {
+.todo-item .completed {
   text-decoration: line-through;
   color: #888;
   border: 2px solid #800080;
