@@ -7,22 +7,26 @@
     <link rel="stylesheet" href="609a232ab53e413e38d2.css" />
   <script defer src="main.js"></script></head>
 
-  <body>
+  <div>
     <header class="todo-header">
       <div class="todo-list">Todo List</div>
       <div class="date" id="date">Date:</div>
     </header>
-
+    
     <div class="projects-todos">
+      <div class="projects-add">
       <h2 class="projects-title">Projects</h2>
       <div class="add-project">
         <button id="add-project">add project</button>
       </div>
+      </div>
 
+      <div class="todos-add">
       <h2 class="todo-items-title">Todos</h2>
       <div class="add-todo">
         <button id="add-todo">add todo</button>
       </div>
+    </div>
     </div>
 
     <div class="container">
@@ -64,8 +68,11 @@
         />
         <label for="todo-due-date">Due Date: </label>
         <input type="date" id="todo-due-date" name="todo-due-date" required />
-        <label for="todo-priority">Priority: </label>
-        <input type="text" id="todo-priority" name="todo-priority" required />
+        
+        <label for="todo-priority">
+        <input type="radio" id="todo-priority" name="todo-priority" value="low" checked/>
+        </label>
+        
         <label for="todo-completed" value="false"></label>
         <input
           type="checkbox"

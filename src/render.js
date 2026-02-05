@@ -32,6 +32,7 @@ export function renderProjects() {
 
     // Delete button
     const delBtn = document.createElement("button");
+    delBtn.style = "border: solid 2px #800080";
     delBtn.textContent = "Delete";
     delBtn.addEventListener("click", (e) => {
       e.stopPropagation(); // prevent triggering project click
