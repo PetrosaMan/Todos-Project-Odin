@@ -1,92 +1,91 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List Odin Project</title>
-    <link rel="stylesheet" href="609a232ab53e413e38d2.css" />
-  <script defer src="main.js"></script></head>
 
-  <div>
-    <header class="todo-header">
-      <div class="todo-list">Todo List</div>
-      <div class="date" id="date">Date:</div>
-    </header>
-    
-    <div class="projects-todos">
-      <div class="projects-add">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List Odin Project</title>
+  <link rel="stylesheet" href="609a232ab53e413e38d2.css" />
+<script defer src="main.js"></script></head>
+
+<div>
+  <header class="todo-header">
+    <div class="todo-list">Todo List</div>
+    <div class="date" id="date">Date:</div>
+  </header>
+
+  <div class="projects-todos">
+    <div class="projects-add">
       <h2 class="projects-title">Projects</h2>
       <div class="add-project">
         <button id="add-project">add project</button>
       </div>
-      </div>
+    </div>
 
-      <div class="todos-add">
+    <div class="todos-add">
       <h2 class="todo-items-title">Todos</h2>
       <div class="add-todo">
         <button id="add-todo">add todo</button>
       </div>
     </div>
+  </div>
+
+  <div class="container">
+    <!-- Projects-->
+    <div id="projects">No projects</div>
+    <!-- Todos-->
+    <div id="todos">
+      <p>No todos</p>
     </div>
+  </div>
 
-    <div class="container">
-      <!-- Projects-->
-      <div id="projects">No projects</div>
-      <!-- Todos-->
-      <div id="todos">
-        <p>No todos</p>
-      </div>
-    </div>
+  <!--add project dialog -->
+  <dialog class="project-dialog">
+    <form method="dialog">
+      <label for="project-name">Project: </label>
+      <input type="text" id="project-name" name="project-name" placeholder="my project" required />
+      <button type="submit">submit</button>
+    </form>
+  </dialog>
 
-    <!--add project dialog -->
-    <dialog class="project-dialog">
-      <form method="dialog">
-        <label for="project-name">Project: </label>
-        <input
-          type="text"
-          id="project-name"
-          name="project-name"
-          placeholder="my project"
-          required
-        />
-        <button type="submit">submit</button>
-      </form>
-    </dialog>
+  <!--add todo dialog -->
+  <dialog class="todo-dialog">
+    <form method="dialog">
+      <input type="hidden" id="projectId" name="projectId" />
+      <label for="todo-title">Title: </label>
+      <input type="text" id="todo-title" name="todo-title" required />
+      <label for="todo-description">Description: </label>
+      <input type="text" id="todo-description" name="todo-description" required />
+      <label for="todo-due-date">Due Date: </label>
+      <input type="date" id="todo-due-date" name="todo-due-date" required />
 
-    <!--add todo dialog -->
-    <dialog class="todo-dialog">
-      <form method="dialog">
-        <input type="hidden" id="projectId" name="projectId" />
-        <label for="todo-title">Title: </label>
-        <input type="text" id="todo-title" name="todo-title" required />
-        <label for="todo-description">Description: </label>
-        <input
-          type="text"
-          id="todo-description"
-          name="todo-description"
-          required
-        />
-        <label for="todo-due-date">Due Date: </label>
-        <input type="date" id="todo-due-date" name="todo-due-date" required />
-        
-        <label for="todo-priority">
-        <input type="radio" id="todo-priority" name="todo-priority" value="low" checked/>
-        </label>
-        
-        <label for="todo-completed" value="false"></label>
-        <input
-          type="checkbox"
-          id="todo-completed"
-          name="todo-completed"
-          value="false"
-        />
-        <label for="todo-completed">completed</label><br />
-        <button type="submit" id="todo-dialog-button">submit</button>
-      </form>
-    </dialog>
+      <!-- <label for="todo-priority">Priority</label>
+        <input type="text" id="todo-priority" name="todo-priority" value="low" checked/>
+      -->
+      <fieldset>
+        <legend>Priority</legend>
+        <div>
+          <input type="radio" id="low" name="priority" value="low" />
+          <label for="low">Low</label>
+        </div>
+        <div>
+          <input type="radio" id="medium" name="priority" value="medium" />
+          <label for="medium">Medium</label>
+        </div>
+        <div>
+          <input type="radio" id="high" name="priority" value="high" />
+          <label for="high">High</label>
+        </div>
+      </fieldset <label for="todo-completed" value="false"></label>
+      <input type="checkbox" id="todo-completed" name="todo-completed" value="false" />
+      <label for="todo-completed">completed</label><br />
+      <button type="submit" id="todo-dialog-button">submit</button>
+    </form>
+  </dialog>
 
-    <footer class="footer">
-      <p>by PetrosaMan , Jan 2026</p>
-    </footer>
+  <footer class="footer">
+    <p>by PetrosaMan , Jan 2026</p>
+  </footer>
   </body>
+
 </html>

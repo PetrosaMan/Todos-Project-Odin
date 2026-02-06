@@ -89,33 +89,75 @@ export function renderTodos(projectId) {
     const editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
     editBtn.addEventListener("click", () => {
+      console.log(
+        "Edit button clicked for todo:",
+        todo.title,
+        "with priority:",
+        todo.priority,
+      );
       const dialog = document.querySelector(".todo-dialog");
+      // mark dialog as editing so the add-todo handler will skip
+      dialog.dataset.editing = "true";
       dialog.showModal();
 
       // Pre-fill modal
       document.getElementById("todo-title").value = todo.title;
       document.getElementById("todo-description").value = todo.description;
       document.getElementById("todo-due-date").value = todo.dueDate;
-      document.getElementById("todo-priority").value = todo.priority;
-      document.getElementById("todo-completed").checked = todo.completed;
+
+      // Set priority radio button safely (scope to dialog)      // First uncheck ALL priority radios
+      dialog.querySelectorAll('input[name="priority"]').forEach((r) => {
+        r.checked = false;
+      });
+      const priorityRadio = dialog.querySelector(
+        `input[name="priority"][value="${todo.priority}"]`,
+      );
+      if (priorityRadio) {
+        console.log("Setting priority radio to:", todo.priority);
+        priorityRadio.checked = true;
+      } else {
+        // Fallback to "low" if priority doesn't match
+        console.log("Priority not found, defaulting to low");
+        const low = document.getElementById("low");
+        if (low) low.checked = true;
+      }
+
+      document.getElementById("todo-completed").checked = !!todo.completed;
 
       // Override form submit for editing
       const form = dialog.querySelector("form");
-      const handler = (e) => {
+      form.onsubmit = (e) => {
+        console.log("Edit form submitted for todo:", todo.title);
         e.preventDefault();
+        e.stopPropagation();
+        const priorityChecked = form.querySelector(
+          'input[name="priority"]:checked',
+        );
+        console.log("Priority selected in form:", priorityChecked?.value);
+        if (!priorityChecked) {
+          alert("Please select a priority");
+          return;
+        }
+        console.log(
+          "Calling todo.edit() with priority:",
+          priorityChecked.value,
+        );
         todo.edit(
           document.getElementById("todo-title").value,
           document.getElementById("todo-description").value,
           document.getElementById("todo-due-date").value,
-          document.getElementById("todo-priority").value,
+          priorityChecked.value,
           document.getElementById("todo-completed").checked,
         );
+        console.log("After edit, todo.priority is:", todo.priority);
         projects.saveToLocalStorage();
         renderTodos(projectId);
-        form.removeEventListener("submit", handler);
+        form.onsubmit = null; // Clear the handler
+        // reset editing flag
+        dialog.dataset.editing = "false";
         dialog.close();
       };
-      form.addEventListener("submit", handler);
+      // editing flag already set before opening
     });
 
     // Delete button
