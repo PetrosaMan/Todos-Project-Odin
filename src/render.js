@@ -49,7 +49,7 @@ export function renderProjects() {
   });
 }
 
-// renderTodos.js
+// render.js
 // Render todos for a given project ID into #todos div
 export function renderTodos(projectId) {
   const todosContainer = document.getElementById("todos");
@@ -78,7 +78,7 @@ export function renderTodos(projectId) {
 
     // Text
     const textSpan = document.createElement("span");
-    textSpan.innerHTML = `${todo.title}<br>
+    textSpan.innerHTML = `${todo.title}<br>    
     Descr: ${todo.description}<br>
     Due: ${todo.dueDate}<br>
     Priority: ${todo.priority}<br>

@@ -13,6 +13,10 @@ body {
   border-radius: 10px;
 }
 
+span {
+  width: 350px;
+}
+
 button {
   margin: 5px;
   padding: 8px;
@@ -233,8 +237,9 @@ label {
 
 /* Todo items */
 .todo-item {
-  padding: 6px 10px;
-  margin: 4px 0;
+  padding: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
   border: 3px solid purple;
   border-radius: 8px;
   font-size: 20px;

@@ -58,10 +58,7 @@
       <input type="text" id="todo-description" name="todo-description" required />
       <label for="todo-due-date">Due Date: </label>
       <input type="date" id="todo-due-date" name="todo-due-date" required />
-
-      <!-- <label for="todo-priority">Priority</label>
-        <input type="text" id="todo-priority" name="todo-priority" value="low" checked/>
-      -->
+      
       <fieldset>
         <legend>Priority</legend>
         <div>
@@ -76,9 +73,11 @@
           <input type="radio" id="high" name="priority" value="high" />
           <label for="high">High</label>
         </div>
-      </fieldset <label for="todo-completed" value="false"></label>
+      </fieldset>
+
+      <label for="todo-completed" value="false"></label>
       <input type="checkbox" id="todo-completed" name="todo-completed" value="false" />
-      <label for="todo-completed">completed</label><br />
+      <br/>
       <button type="submit" id="todo-dialog-button">submit</button>
     </form>
   </dialog>
